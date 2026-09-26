@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/modtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="changed_text"
+        android:textSize="32sp" />
+
+    <EditText
+        android:id="@+id/edtext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="***"
+        android:textSize="32sp" />
+
+    <Button
+        android:id="@+id/change"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="change_color" />
+
+    <Button
+        android:id="@+id/move"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="edit" />
+
+    <Button
+        android:id="@+id/btnBgColor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Изменить цвет экрана" />
+
+    <Button
+        android:id="@+id/btnFontSize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Изменить размер шрифта" />
+
+    <!-- Горизонтальное размещение кнопок -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Жирность и наклон"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/btnFont"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Тип шрифта"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <!-- Кнопка с картинкой -->
+    <Button
+        android:id="@+id/btnWithImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:padding="15dp"
+        android:text="Кнопка с картинкой"
+        app:icon="@mipmap/ic_launcher"
+        app:iconGravity="textStart"
+        app:layout_constraintStart_toEndOf="@+id/btnVerticalContainer"/>
+
+    <LinearLayout
+        android:id="@+id/btnVerticalContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:rotation="90"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnWithImage">
+
+        <Button
+            android:id="@+id/btnVertical1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Кнопка"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+</LinearLayout>
