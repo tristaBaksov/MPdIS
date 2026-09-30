@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private boolean isSerif = false;
     private boolean isGreenBg = false;
     private int caseState = 0;
+    private boolean isColored = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,6 +107,23 @@ public class MainActivity extends AppCompatActivity {
             } else if (caseState == 1) {
                 tv.setText(currentText.toLowerCase());
                 caseState = 0;
+            }
+        });
+
+        Button btnWithImage = findViewById(R.id.btnWithImage);
+        btnWithImage.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                if (!isColored) {
+                    btnWithImage.setText("Цвет изменен!");
+                    btnWithImage.setBackgroundColor(getResources().getColor(colorVals[idx]));
+                } else {
+                    btnWithImage.setBackgroundColor(Color.parseColor("#6200EE"));
+                    btnWithImage.setText("Кнопка с картинкой");
+                }
+                // Изменяем индекс 
+                idx = (idx + 1) % colorVals.length;
+                // Переключаем состояние
+                isColored = !isColored;
             }
         });
     }
