@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private boolean isBoldItalic = false;
     private boolean isSerif = false;
     private boolean isGreenBg = false;
-    private int caseState = 0; // Для переключения регистра кнопкой 1
+    private int caseState = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,9 +96,7 @@ public class MainActivity extends AppCompatActivity {
             isSerif = !isSerif;
         });
 
-        // --- ФУНКЦИОНАЛ ДЛЯ ВЕРТИКАЛЬНЫХ КНОПОК ---
-
-        // Вертикальная кнопка 1: Изменение регистра текста (Caps / Lower / Normal)
+        // Изменение регистра текста
         Button btnVertical1 = findViewById(R.id.btnVertical1);
         btnVertical1.setOnClickListener(v -> {
             String currentText = tv.getText().toString();
@@ -107,12 +105,6 @@ public class MainActivity extends AppCompatActivity {
                 caseState = 1;
             } else if (caseState == 1) {
                 tv.setText(currentText.toLowerCase());
-                caseState = 2;
-            } else {
-                if (!currentText.isEmpty()) {
-                    String capitalized = currentText.substring(0, 1).toUpperCase() + currentText.substring(1).toLowerCase();
-                    tv.setText(capitalized);
-                }
                 caseState = 0;
             }
         });

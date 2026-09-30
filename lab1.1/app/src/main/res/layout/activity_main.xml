@@ -81,7 +81,7 @@
         android:layout_marginTop="4dp"
         android:padding="15dp"
         android:text="Кнопка с картинкой"
-        app:icon="@mipmap/ic_launcher"
+        app:icon="@drawable/icon_for_button"
         app:iconGravity="textStart"
         app:layout_constraintStart_toEndOf="@+id/btnVerticalContainer"/>
 
