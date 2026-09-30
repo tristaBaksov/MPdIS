@@ -117,10 +117,10 @@ public class MainActivity extends AppCompatActivity {
                     btnWithImage.setText("Цвет изменен!");
                     btnWithImage.setBackgroundColor(getResources().getColor(colorVals[idx]));
                 } else {
-                    btnWithImage.setBackgroundColor(Color.parseColor("#6200EE"));
+                    btnWithImage.setBackgroundColor(Color.parseColor("#D0BCFF"));
                     btnWithImage.setText("Кнопка с картинкой");
                 }
-                // Изменяем индекс 
+                // Изменяем индекс
                 idx = (idx + 1) % colorVals.length;
                 // Переключаем состояние
                 isColored = !isColored;
