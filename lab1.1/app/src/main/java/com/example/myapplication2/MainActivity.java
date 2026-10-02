@@ -17,10 +17,29 @@ public class MainActivity extends AppCompatActivity {
     EditText ed;
     int colorVals[] = {R.color.start, R.color.mid, R.color.last};
 
-    private boolean isLarge = false;
+    // 1. Размеры текста (4 варианта)
+    private final float[] fontSizes = {20f, 28f, 36f, 48f};
+    private int fontSizeIdx = 0;
+
+    // 2. Цвета фона (4 варианта)
+    private final int[] bgColors = {
+            Color.WHITE,
+            Color.parseColor("#C8E6C9"), // Светло-зеленый
+            Color.parseColor("#BBDEFB"), // Светло-синий
+            Color.parseColor("#FFF9C4")  // Светло-желтый
+    };
+    private int bgColorIdx = 0;
+
+    // 3. Типы шрифтов (4 варианта)
+    private final Typeface[] fontFamilies = {
+            Typeface.SANS_SERIF, // Без засечек
+            Typeface.SERIF,      // С засечками
+            Typeface.MONOSPACE,  // Моноширинный
+            Typeface.DEFAULT     // Стандартный
+    };
+    private int fontIdx = 0;
+
     private boolean isBoldItalic = false;
-    private boolean isSerif = false;
-    private boolean isGreenBg = false;
     private int caseState = 0;
     private boolean isColored = false;
 
@@ -53,48 +72,37 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Изменение цвета фона экрана
+        // 1. Переключение цвета фона экрана (4 варианта)
         Button btnBgColor = findViewById(R.id.btnBgColor);
         btnBgColor.setOnClickListener(v -> {
-            if (isGreenBg) {
-                mainLayout.setBackgroundColor(Color.WHITE);
-            } else {
-                mainLayout.setBackgroundColor(Color.parseColor("#C8E6C9"));
-            }
-            isGreenBg = !isGreenBg;
+            bgColorIdx = (bgColorIdx + 1) % bgColors.length;
+            mainLayout.setBackgroundColor(bgColors[bgColorIdx]);
         });
 
-        // Изменение размера шрифта
+        // 2. Переключение размера шрифта (4 варианта: 20sp -> 28sp -> 36sp -> 48sp)
         Button btnFontSize = findViewById(R.id.btnFontSize);
         btnFontSize.setOnClickListener(v -> {
-            if (isLarge) {
-                tv.setTextSize(32);
-            } else {
-                tv.setTextSize(48);
-            }
-            isLarge = !isLarge;
+            fontSizeIdx = (fontSizeIdx + 1) % fontSizes.length;
+            tv.setTextSize(fontSizes[fontSizeIdx]);
         });
 
-        // Изменение жирности и начертания (Жирный / Наклонный)
+        // Изменение жирности и начертания (Normal / Bold_Italic)
         Button btnStyle = findViewById(R.id.btnStyle);
         btnStyle.setOnClickListener(v -> {
             if (isBoldItalic) {
-                tv.setTypeface(null, Typeface.NORMAL);
+                tv.setTypeface(tv.getTypeface(), Typeface.NORMAL);
             } else {
-                tv.setTypeface(null, Typeface.BOLD_ITALIC);
+                tv.setTypeface(tv.getTypeface(), Typeface.BOLD_ITALIC);
             }
             isBoldItalic = !isBoldItalic;
         });
 
-        // Изменение типа шрифта (Sans-serif / Serif)
+        // 3. Переключение типа шрифта (4 варианта: Sans-serif -> Serif -> Monospace -> Default)
         Button btnFont = findViewById(R.id.btnFont);
         btnFont.setOnClickListener(v -> {
-            if (isSerif) {
-                tv.setTypeface(Typeface.DEFAULT, tv.getTypeface() != null ? tv.getTypeface().getStyle() : Typeface.NORMAL);
-            } else {
-                tv.setTypeface(Typeface.SERIF, tv.getTypeface() != null ? tv.getTypeface().getStyle() : Typeface.NORMAL);
-            }
-            isSerif = !isSerif;
+            fontIdx = (fontIdx + 1) % fontFamilies.length;
+            int currentStyle = (tv.getTypeface() != null) ? tv.getTypeface().getStyle() : Typeface.NORMAL;
+            tv.setTypeface(fontFamilies[fontIdx], currentStyle);
         });
 
         // Изменение регистра текста
@@ -110,6 +118,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Кнопка с картинкой
         Button btnWithImage = findViewById(R.id.btnWithImage);
         btnWithImage.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -120,9 +129,7 @@ public class MainActivity extends AppCompatActivity {
                     btnWithImage.setBackgroundColor(Color.parseColor("#D0BCFF"));
                     btnWithImage.setText("Кнопка с картинкой");
                 }
-                // Изменяем индекс
                 idx = (idx + 1) % colorVals.length;
-                // Переключаем состояние
                 isColored = !isColored;
             }
         });
