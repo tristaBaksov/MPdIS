@@ -32,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
 
     // 3. Типы шрифтов (4 варианта)
     private final Typeface[] fontFamilies = {
-            Typeface.SANS_SERIF, // Без засечек
             Typeface.SERIF,      // С засечками
             Typeface.MONOSPACE,  // Моноширинный
             Typeface.DEFAULT     // Стандартный
