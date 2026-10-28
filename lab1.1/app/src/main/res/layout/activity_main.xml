@@ -49,7 +49,6 @@
         android:layout_marginTop="4dp"
         android:text="Изменить размер шрифта" />
 
-    <!-- Горизонтальное размещение кнопок -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -73,7 +72,6 @@
             android:textSize="12sp" />
     </LinearLayout>
 
-    <!-- Кнопка с картинкой -->
     <Button
         android:id="@+id/btnWithImage"
         android:layout_width="wrap_content"
@@ -82,17 +80,22 @@
         android:padding="15dp"
         android:text="Кнопка с картинкой"
         app:icon="@drawable/icon_for_button"
-        app:iconGravity="textStart"
-        app:layout_constraintStart_toEndOf="@+id/btnVerticalContainer"/>
+        app:iconGravity="textStart" />
+
+    <!-- Кнопка для замены текста на смайлики -->
+    <Button
+        android:id="@+id/btnEmoji"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Заменить буквы на смайлики" />
 
     <LinearLayout
         android:id="@+id/btnVerticalContainer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:rotation="90"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnWithImage">
+        android:rotation="90">
 
         <Button
             android:id="@+id/btnVertical1"
