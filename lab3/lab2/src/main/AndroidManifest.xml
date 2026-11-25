@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Разрешение на отправку SMS для Варианта 2 -->
+    <uses-permission android:name="android.permission.SEND_SMS" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Mediaplayer2">
+
+        <!-- Первая страница: Start Service, Stop Service, Next Page -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Вторая страница: Сервис отправки SMS и кнопка Quit -->
+        <activity
+            android:name=".NextPage"
+            android:exported="false" />
+
+        <!-- Сервис проигрывания музыки -->
+        <service
+            android:name=".MyService"
+            android:enabled="true"
+            android:exported="false" />
+
+        <!-- Сервис отправки SMS (Вариант 2) -->
+        <service
+            android:name=".SmsService"
+            android:enabled="true"
+            android:exported="false" />
+
+    </application>
+
+</manifest>

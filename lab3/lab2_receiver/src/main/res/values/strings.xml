@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ReceiverApp</string>
+    <string name="btn_broadcast_intent">Broadcast Intent</string>
+    <string name="btn_quit">Quit</string>
+    <string name="hint_phone_number">Номер получателя</string>
+    <string name="hint_sms_message">Текст сообщения</string>
+    <string name="default_phone_number">+375291234567</string>
+    <string name="default_sms_message">Тестовое SMS через Broadcast Receiver.</string>
+</resources>
