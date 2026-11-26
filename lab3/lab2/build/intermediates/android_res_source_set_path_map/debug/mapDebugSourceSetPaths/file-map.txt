@@ -1,8 +1,0 @@
-com.example.mediaplayer2.lab2-pngs-0 D:\Uni\Android\lab3\lab2\build\generated\res\pngs\debug
-com.example.mediaplayer2.lab2-updated_navigation_xml-1 D:\Uni\Android\lab3\lab2\build\generated\updated_navigation_xml\debug
-com.example.mediaplayer2.lab2-packageDebugResources-2 D:\Uni\Android\lab3\lab2\build\intermediates\incremental\debug\packageDebugResources\merged.dir
-com.example.mediaplayer2.lab2-packageDebugResources-3 D:\Uni\Android\lab3\lab2\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
-com.example.mediaplayer2.lab2-debug-4 D:\Uni\Android\lab3\lab2\build\intermediates\merged_res\debug\mergeDebugResources
-com.example.mediaplayer2.lab2-debug-5 D:\Uni\Android\lab3\lab2\src\debug\res
-com.example.mediaplayer2.lab2-main-6 D:\Uni\Android\lab3\lab2\src\main\res
-gradleHome-0 C:\Users\Ivan\.gradle
